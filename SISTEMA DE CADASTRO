@@ -56,6 +56,9 @@ programa {
               escreva("Nº 01 - ", nome_cliente, " - Idade: ", idade, "\n")
 
               escreva(".**************************************************************************************.\n")
-    }
+              Util.aguarde(5000)  //Aguarda 05 segundos
+              inicio()
+          pare
+        }
   }
 }
