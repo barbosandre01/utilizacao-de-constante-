@@ -1,0 +1,40 @@
+programa {
+  funcao inicio() {
+
+    cadeia opcao, nome_cliente
+    inteiro idade 
+
+    escreva(".**************************************************************************************.\n")
+    escreva("|                                 SISTEMA DE CADASTO                                   |\n")
+    escreva("'**************************************************************************************'\n")
+
+    escreva(" 1 - Cadrastar novo cliente\n")
+    escreva(" 2 - Visualizar clienter cadastrados\n")
+    escreva(" 3 - Sair do sistema\n")
+
+    escreva(".**************************************************************************************.\n")
+    escreva("Opção desejada: ")
+    leia(opcao)
+
+    escolha(opcao)
+    {
+        caso "1":
+        {
+            limpa()
+            escreva("Informe o nome do cliente:")
+            leia(nome_cliente)
+
+            limpa()
+            escreva("Qual a idade do(a) cliente ", nome_cliente, ":")
+            leia(idade)
+
+            limpa()
+            //Exibe mensaem de usuário cadastrado com sucesso
+            escreva("AVISO: Usuário cadastrado com sucesso!")
+            Util.aguarde(3000)
+
+
+        }
+    }
+  }
+}
