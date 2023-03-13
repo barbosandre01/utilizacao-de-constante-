@@ -1,8 +1,13 @@
 programa {
-  funcao inicio() {
+
+  inclua biblioteca Util
 
     cadeia opcao, nome_cliente
     inteiro idade 
+
+    funcao inicio() {
+
+    limpa()
 
     escreva(".**************************************************************************************.\n")
     escreva("|                                 SISTEMA DE CADASTO                                   |\n")
@@ -21,20 +26,36 @@ programa {
         caso "1":
         {
             limpa()
-            escreva("Informe o nome do cliente:")
+            escreva("Informe o nome do cliente:\n")
             leia(nome_cliente)
 
-            limpa()
-            escreva("Qual a idade do(a) cliente ", nome_cliente, ":")
-            leia(idade)
 
             limpa()
-            //Exibe mensaem de usuário cadastrado com sucesso
+            escreva("Qual a idade do(a) cliente ", nome_cliente, ":\n")
+            leia(idade)
+
+
+            limpa()
+            //Exibe mensagem de usuário cadastrado com sucesso
             escreva("AVISO: Usuário cadastrado com sucesso!")
             Util.aguarde(3000)
 
-
+            //Retorna para o menu inicio
+            inicio()
+            pare
         }
+
+        caso "2":
+        {
+          limpa()
+              limpa()
+              escreva(".**************************************************************************************.\n")
+              escreva("|                                 CLIENTES CADASTRADOS                                 |\n")
+              escreva("'**************************************************************************************'\n")
+
+              escreva("Nº 01 - ", nome_cliente, " - Idade: ", idade, "\n")
+
+              escreva(".**************************************************************************************.\n")
     }
   }
 }
