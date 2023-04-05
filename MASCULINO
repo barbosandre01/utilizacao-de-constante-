@@ -1,0 +1,29 @@
+programa 
+{
+
+     caracter sexo
+
+     funcao inicio()
+     {
+           escreva("Qual o seu SEXO? [M/F]\n")
+           leia(sexo)
+           limpa()
+
+           se(sexo == 'M' ou sexo == 'm')
+           {
+                 escreva("Você é do sexo MASCULINO!")
+           }
+           senao
+           {                 
+                 se(sexo == 'F' ou sexo == 'f')
+                 {
+                      escreva("Você é do sexo FEMININO!")
+                 }
+                 senao
+                 {
+                      escreva("O sexo informado não foi reconhecido, tente novamente!")
+                 }
+           }
+
+      }
+}      
