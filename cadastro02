@@ -1,9 +1,10 @@
 programa {
 
   inclua biblioteca Util
+  inclua biblioteca Texto
 
-     inteiro idade[8], quant = 0, n, opcao
-     cadeia nome_cliente[8], pesquisa 
+     inteiro opcao, idade[8], quant = 0, n, achei = 0
+     cadeia nome_cliente[8], termo
 
   funcao inicio() 
   {
@@ -28,6 +29,7 @@ programa {
           limpa()
           escreva("Qual o nome do cliente: ")
           leia(nome_cliente[quant])
+          nome_cliente[quant] = Texto.caixa_alta(nome_cliente[quant])
          
           limpa()
           escreva("Qual a idade do(a) cliente ", nome_cliente[quant], ":")
@@ -38,57 +40,67 @@ programa {
           limpa()
           //Exibe mensagem de usuário cadastrado com sucesso
           escreva("AVISO: Usuário cadastrado com sucesso!")
-          Util.aguarde(1000)
+          Util.aguarde(3000)
 
         //retorna para o menu inicio
         inicio()
-        pare
-      }
 
       caso 2:
       {
       limpa()
       escreva(".******************************************.\n")
-      escreva("|            CLIENTES  CADASTRO            |\n")
+      escreva("|            CLIENTES  CADASTRO           |\n")
       escreva(".******************************************.\n")  
 
       para(n = 0; n < quant; n++)
       {
         escreva("N°:", n+1, " - ", nome_cliente[n], "- idade: ", idade[n], "\n")
-        
       }
-
+ 
       escreva("********************************************\n\n")
       Util.aguarde(3000) //aguarde 05 segundos
       inicio()
      
       }
-       caso 3 
-       {
-        escreva("Escreva o nome de quem você deseja buscar:")
-        leia(pesquisa)
+      caso 3 
+      {
+        limpa()
+        achei = 0 //reseto a variável achei para limpar a pesquisa e funcionalidades
+        escreva("Escreva o nome de quem você deseja buscar:\n")
+        leia(termo)
+        termo = Texto.caixa_alta(termo)
+
         limpa()
 
         escreva("***************************************\n")
         escreva("         RESULTADO DA PESQUISA     \n")
         escreva("***************************************\n")
+        
+
 
         para(n = 0; n < quant; n++)
-        {
-          se(nome_cliente[n] == pesquisa)
+        { 
+          se(nome_cliente[n] == termo)
           {
-             escreva("N°:", n+1, " - ", nome_cliente[n], "- idade: ", idade[n], "\n")
-            
+            achei = 1
+            escreva("O ", nome_cliente[n], " está na posição ",  n+1)
           }
-          
-          
 
         }
-        escreva("********************************************\n\n")
+
+        se(achei == 0)
+        {
+          limpa()
+          escreva("ATENÇÃO! Nenhum usuário foi encontrado na base de dados!")
+        }
+
+        escreva("\n\n********************************************\n\n")
         Util.aguarde(3000) //aguarde 05 segundos
         inicio()
         pare
+
       }
+
 
 
       caso 4
