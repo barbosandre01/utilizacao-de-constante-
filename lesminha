@@ -5,11 +5,17 @@ programa {
   leia(altura)
   limpa()
 
-  se(altura > 1)
+  se(altura > 3)
   {
 
   escreva("A lesminha levara ", altura - 2,  " dias. ")
   
+  }
+
+  senao
+  {
+
+    escreva("A lesminha levara 1 dia")
   }
 
 
